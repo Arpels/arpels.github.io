@@ -31,31 +31,16 @@ RSA基本概念、`Sagemath`基本用法、`Python`基本用法、初等数论�
 
 ### 3. 性质
 给定项序，下列条件是等价的：
-> （a）${\Bbb{G}}$是${\cal{K}}[x]$中的`Gröbner`基；
+（注：从hexo换成academicpages之后公式显示有点问题，所以直接放截图）
+![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_52f46ea440d35508faec2dfaa3beac8c.png)
 
-> （b）对任意非零多项式$F \in <{\Bbb{G}}>$，$nform(F,{\Bbb{G}}) = 0$；
-
-> （c）对${\cal{K}}[x]$中的所有多项式$F_1$与$F_2$，$$F_1 - F_2 \in <{\Bbb{G}}> \iff nform(F_1,{\Bbb{G}}) = nform(F_2,{\Bbb{G}})$$；
-
-> （d）每个非零多项式$F \in <{\Bbb{G}}>$对${\Bbb{G}}都是可约的$；
-
-> （e）对每个非零多项式$F \in <{\Bbb{G}}>$，存在多项式$G \in {\Bbb{G}}$使$lt(G)|lt(F)$；
-
-> （f）对所有多项式$F \in {\cal{K}}[x]$，$$F \in <{\Bbb{G}}> \iff F = \sum_{G \in {\Bbb{G}}}H_GG$$，而$lt(F) = {max}_{G \in {\Bbb{G}}}lt(H_G) \cdot lt(G)$；
-
-> （g）$<\lbrace lt(G)|G \in {\Bbb{G}} \rbrace> = <\lbrace lt(F)|F \in <{\Bbb{G}}> \rbrace>$
 
 ### 4. 生成
 此处列出的是由`Buchberger`提出的第一个生成`Gröbner`基的算法。
 截至目前，已有多种优化的算法，感兴趣可以自行Google相关资料。
 相关引理详见《计算机代数》，此处未免篇幅累赘，省略。
-算法：任给非空有限多项式组${\Bbb{P}} \subset {\cal{K}}[x]$，
-`Step1`：令${\Bbb{G}}:={{\Bbb{P}}}, \Theta := \lbrace \lbrace F,G \rbrace | F \not= G, F,G \in {\Bbb{P}} \rbrace$.
-`Step2`：重复下列步骤直至$\Theta = \emptyset$：
-&#8195;&#8195;`Step2.1`：设${F,G}$为$\Theta$中的元素，且令$\Theta := \Theta \backslash \lbrace \lbrace F,G\rbrace \rbrace$.
-&#8195;&#8195;`Step2.2`：计算$R:=nform(spol(F,G),{\Bbb{G}})$.
-&#8195;&#8195;`Step2.3`：若$R \not= 0$，则令$$\Theta := \Theta \bigcup \lbrace \lbrace R,G\rbrace | G \in {\Bbb{G}}\rbrace, {\Bbb{G}} := {\Bbb{G}} \bigcup \lbrace R \rbrace$$.
-（注：由于对于一个理想，其`Gröbner`基并非唯一，因此引入新概念约化`Gröbner`基，这个对一个理想来说是唯一的。求解算法感兴趣可自行Google）
+![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_3d687f9628405f901fc1d1965c4bf236.png)
+
 
 ## 2. 我对于Gröbner Basis的理解
 我觉得`Gröbner Basis`本质上就是`gcd`。只不过最简单的`gcd`是两个整数求公因数，或者是两个多项式求公因式，而现在是对于一个理想求其一组`Gröbner Basis`。
