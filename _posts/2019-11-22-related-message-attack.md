@@ -31,9 +31,9 @@ RSA基本概念、`Sagemath`基本用法、`Python`基本用法、初等数论�
 
 ### 3. 性质
 给定项序，下列条件是等价的：
-（注：从hexo换成academicpages之后公式显示有点问题，所以直接放截图）
-![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_52f46ea440d35508faec2dfaa3beac8c.png)
+![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_e474c29b6cae47e904ed8c01b0a8c5a1.png)
 
+（注：从hexo换成academicpages之后公式显示有点问题，所以直接放截图）
 
 ### 4. 生成
 此处列出的是由`Buchberger`提出的第一个生成`Gröbner`基的算法。
