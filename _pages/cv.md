@@ -16,7 +16,7 @@ Education
 
 Work experience
 ======
-* 2018 - 2021 : CTF Player
+* 2018 - 2020 : CTF Player
   * CNSS (Cohesion Network Security Studio at UESTC)
   * Duties included: Crypto
   * Supervisor: Prof. Xiaosong Zhang
