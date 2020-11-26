@@ -17,34 +17,40 @@ tags:
 RSA基本概念、`Sagemath`基本用法、`Python`基本用法、初等数论、高等代数、项序、多项式的约化、符号计算。
 
 ## 1. Gröbner Basis 相关概念
-1. 背景
+### 1. 背景
 代数攻击是现代密码学中的一种攻击方法，其主要方法就是利用代数系统的良好性质及求解方法来攻击现存的密码学系统。
 而求解有限域上的多变元二次方程是代数攻击的热点之一，因为该类方程在密码学中有着众多应用，比如`AES`可以用稀疏的超定的多变元二次方程来描述。
 在国内外求解该类方程一般有两种方法，一种就是`Gröbner`基方法及其变种，但它有明显的缺点。
 首先是效率差，用它求解多变元二次方程问题时，`Gröbner`基方法的时间复杂度理论上为双指数，实际运行时间为单指数。
 其次是时间复杂度难以度量，由于上诉两种方法都要达到一定条件才能终止算法，但是何时能达到条件不能预先判断，造成时间复杂度难以度量。对于稀疏的系统，`Gröbner`基方法能够受益于系统的稀疏性，但是复杂度依然难以度量。
 
-2. 定义
+### 2. 定义
 多项式组${\Bbb{G}} \subset {\cal{K}}[x]$称为给定项序$<$下的`Gröbner`基，如果范式$nform(G,{\Bbb{G}})$对所有$G \in {\cal{K}}[x]$都是唯一的。
 称${\Bbb{G}}$为多项式组${\Bbb{P}} \subset {\cal{K}}[x]$或理想$<{\Bbb{P}}>$的`Gröbner`基，如果${\Bbb{G}}$是`Gröbner`基，且$<{\Bbb{P}}> = <{\Bbb{G}}>$。
 注：每个理想都有一个由有限多个多项式构成的`Gröbner`基，这由`Hilbert`基定理保证。
 
-3. 性质
+### 3. 性质
 给定项序，下列条件是等价的：
 > （a）${\Bbb{G}}$是${\cal{K}}[x]$中的`Gröbner`基；
+
 > （b）对任意非零多项式$F \in <{\Bbb{G}}>$，$nform(F,{\Bbb{G}}) = 0$；
+
 > （c）对${\cal{K}}[x]$中的所有多项式$F_1$与$F_2$，$$F_1 - F_2 \in <{\Bbb{G}}> \iff nform(F_1,{\Bbb{G}}) = nform(F_2,{\Bbb{G}})$$；
+
 > （d）每个非零多项式$F \in <{\Bbb{G}}>$对${\Bbb{G}}都是可约的$；
+
 > （e）对每个非零多项式$F \in <{\Bbb{G}}>$，存在多项式$G \in {\Bbb{G}}$使$lt(G)|lt(F)$；
+
 > （f）对所有多项式$F \in {\cal{K}}[x]$，$$F \in <{\Bbb{G}}> \iff F = \sum_{G \in {\Bbb{G}}}H_GG$$，而$lt(F) = {max}_{G \in {\Bbb{G}}}lt(H_G) \cdot lt(G)$；
+
 > （g）$<\lbrace lt(G)|G \in {\Bbb{G}} \rbrace> = <\lbrace lt(F)|F \in <{\Bbb{G}}> \rbrace>$
 
-4. 生成
+### 4. 生成
 此处列出的是由`Buchberger`提出的第一个生成`Gröbner`基的算法。
 截至目前，已有多种优化的算法，感兴趣可以自行Google相关资料。
 相关引理详见《计算机代数》，此处未免篇幅累赘，省略。
 算法：任给非空有限多项式组${\Bbb{P}} \subset {\cal{K}}[x]$，
-`Step1`：令${\Bbb{G}}:={{\Bbb{P}}},\Theta := \lbrace \lbrace F,G \rbrace | F \not= G, F,G \in {\Bbb{P}} \rbrace$.
+`Step1`：令${\Bbb{G}}:={{\Bbb{P}}}, \Theta := \lbrace \lbrace F,G \rbrace | F \not= G, F,G \in {\Bbb{P}} \rbrace$.
 `Step2`：重复下列步骤直至$\Theta = \emptyset$：
 &#8195;&#8195;`Step2.1`：设${F,G}$为$\Theta$中的元素，且令$\Theta := \Theta \backslash \lbrace \lbrace F,G\rbrace \rbrace$.
 &#8195;&#8195;`Step2.2`：计算$R:=nform(spol(F,G),{\Bbb{G}})$.
@@ -68,19 +74,19 @@ RSA基本概念、`Sagemath`基本用法、`Python`基本用法、初等数论�
 > 不变的、已知的小公钥指数
 
 ### 3.2 文献主体
-1. Introduction：
+#### 1. Introduction：
 作者表示自己提出的这种方法与`Hastad`的`广播攻击`、`Simmons`的`共模攻击`不一样，而是受到`Franklin`一种`e=3`下明文有线性关系的攻击的影响。
 
-2. Generalizing the exponet e：
+#### 2. Generalizing the exponet e：
 作者讨论了一元多项式的情况，并指出无论`e`为何值，用`多项式的gcd`总能求解，复杂度主要来源于`gcd`。本文在4.2部分开头介绍了这种方法。
 
-3. Generalizing the degree $\delta$ of the polynomial：
+#### 3. Generalizing the degree $\delta$ of the polynomial：
 作者讨论了更进一步的情况，如果两个明文关系不是显函数，而是隐函数，那怎么办？作者提出了用`Resultant`（结式）。这种解法的复杂度主要来源于结式的计算。在第三部分末尾，作者进行了总结，`gcd`与结式本质上都可以归于`Gröbner Basis`的一种形式。
 
-4. Generalizing the number of messages k：
+#### 4. Generalizing the number of messages k：
 作者讨论了最一般的情况，给出一个表明所有明文之间关系的多项式，以及每对明密文间关系的多项式${x_i^e}-{c_i} = 0 \mod N$，就可以使用`Gröbner Basis`方法解出所有明文。作者并对齐次、非齐次两种情况进行了讨论。
 
-5. Implications：
+#### 5. Implications：
 作者讨论了两种应用，针对`The TMN protocol`与`Verifiable signature sharing`的攻击。还是挺好理解的。
 
 ### 3.3 Conclusions：
