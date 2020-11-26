@@ -48,8 +48,8 @@ RSA基本概念、`Sagemath`基本用法、`Python`基本用法、初等数论�
 
 
 ## 3. Related Message Attack
-[参考文献：使用相关消息的小公钥指数RSA](https://www.cs.unc.edu/~reiter/papers/1996/Eurocrypt.pdf)
-`Coppersmith`等四人几十年前发表在欧密上的论文。
+[参考文献：Low-Exponent RSA with Related Messages](https://reitermk.github.io/papers/1996/Eurocrypt.pdf).
+这是`Coppersmith`等四人几十年前发表在欧密上的论文。
 
 论文大致意思总结如下：
 ### 3.1 Abstract
