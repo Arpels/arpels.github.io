@@ -8,6 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-This is Arpe1s's home on the web!
+This is Arpe1s' home on the web!
 
 Lorem ipsum.
