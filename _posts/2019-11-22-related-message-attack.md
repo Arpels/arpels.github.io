@@ -12,6 +12,8 @@ tags:
 
 # Gröbner Basis的应用：Related Message Attack
 
+[toc]
+
 本文主要介绍`Gröbner`基基本概念以及其在密码学对RSA的一种攻击`Related Message Attack`中的应用。
 阅读本文需要先了解以下前置知识：
 RSA基本概念、`Sagemath`基本用法、`Python`基本用法、初等数论、高等代数、项序、多项式的约化、符号计算。
