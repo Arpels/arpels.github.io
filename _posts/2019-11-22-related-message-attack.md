@@ -10,10 +10,10 @@ tags:
 
 本文主要介绍`Gröbner`基基本概念以及其在密码学对RSA的一种攻击`Related Message Attack`中的应用。
 
-# Gröbner Basis的应用：Related Message Attack
-
-[toc]
+*  目录
 {:toc}
+
+# Gröbner Basis的应用：Related Message Attack
 
 本文主要介绍`Gröbner`基基本概念以及其在密码学对RSA的一种攻击`Related Message Attack`中的应用。
 阅读本文需要先了解以下前置知识：
