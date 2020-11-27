@@ -159,6 +159,7 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
+toc_levels: 1......4
 
 
 # Markdown Processing
