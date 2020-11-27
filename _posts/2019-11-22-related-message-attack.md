@@ -1,7 +1,7 @@
 ---
-title: 'Gröbner Basis的应用：Related Message Attack'
+title: 'Gröbner Basis及其在Related Message Attack中的应用'
 date: 2019-11-22
-permalink: /posts/2019/11/Gröbner Basis的应用：Related Message Attack/
+permalink: /posts/2019/11/Gröbner Basis及其在Related Message Attack中的应用/
 tags:
   - Gröbner Basis
   - Related Message Attack
