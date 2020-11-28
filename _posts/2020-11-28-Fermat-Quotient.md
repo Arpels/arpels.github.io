@@ -52,7 +52,10 @@ $$
 
 ### （2）证明如下
 证明需要用到一些二项式系数的性质，建议先复习一下高中学的二项式定理相关知识。
-证明如下：
+证明如下（新博客的公式渲染又出现了奇怪的问题，暂时用截图代替）：
+![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_5618cb331310d30f63f156bf26f6bb16.png)
+公式的代码如下：
+```tex=
 \begin{align}
 -2 \cdot \frac{2^{p − 1} - 1}p & = - \frac 1p(2^p - 2)\\
 & = -\frac 1p \left( \sum_{k = 0}^p \binom pk - \binom p0 - \binom pp \right) \qquad \\
@@ -69,9 +72,10 @@ $$
 & = 1 + \frac12 + \cdots + \frac1{(p - 3)/2} + \frac1{(p - 1)/2} \\
 & \equiv \sum_{k = 1}^{(p - 1)/2} \frac{1}{k} \pmod p
 \end{align}
+```
 
 ### （3）代码验证
-```python
+```python=
 from Crypto.Util.number import getPrime
 from tqdm import tqdm
 import gmpy2
@@ -126,7 +130,7 @@ print(c)
 这道题常规解法是通过推导，发现最终的结果其实不需要用到$q$，在模$p$上可以直接推导出`flag`。而我们这里选择算出$s$得到$q$，是另一种解法。
 显然，这里要计算一个连续逆元序列的和，我们直接使用`Eisenstein`的结论即可。
 解题脚本如下：
-```python
+```python=
 from Crypto.Util.number import long_to_bytes
 import gmpy2
 
