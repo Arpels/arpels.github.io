@@ -52,10 +52,11 @@ $$
 
 ### （2）证明如下
 证明需要用到一些二项式系数的性质，建议先复习一下高中学的二项式定理相关知识。
+
 证明如下（新博客的公式渲染又出现了奇怪的问题，暂时用截图代替）：
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_5618cb331310d30f63f156bf26f6bb16.png)
 公式的代码如下：
-```tex=
+```python=
 \begin{align}
 -2 \cdot \frac{2^{p − 1} - 1}p & = - \frac 1p(2^p - 2)\\
 & = -\frac 1p \left( \sum_{k = 0}^p \binom pk - \binom p0 - \binom pp \right) \qquad \\
