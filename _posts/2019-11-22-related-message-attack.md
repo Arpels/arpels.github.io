@@ -8,7 +8,7 @@ tags:
   - Asymmetric
 ---
 
-本文主要介绍`Gröbner`基基本概念以及其在密码学对RSA的一种攻击`Related Message Attack`中的应用。
+本文主要介绍`Gröbner`基基本概念及其在`Related Message Attack`中的应用。
 
 *  目录
 {:toc}
