@@ -13,7 +13,6 @@ tags:
 *  目录
 {:toc}
 
-# DSA Biased K Attack
 
 ## 交流会上的PPT
 <iframe src="https://blog.arpe1s.xyz/files/DSA.pdf" style="width:700px; height:800px;" frameborder="0"></iframe>
