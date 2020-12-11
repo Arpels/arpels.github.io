@@ -89,7 +89,9 @@ np.save("A.npy", A)
 
 显然，题目分为两部分，第一部分中的`n`就是由这篇论文所讲的`weak prime`所相乘得到的。
 因此我们使用论文中描述的方法，首先根据`n`确定`M`的大小，再根据`M`选取符合要求的`k`和`c`，然后构造一个格如下：
+
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_af03ea77e978f4bf19d4880d2fd41659.png)
+
 最后用`LLL`算法进行格基规约，将规约后的某个向量作为多项式系数，再对多项式进行分解，即可完成对`n`的分解。
 
 
