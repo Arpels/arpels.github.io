@@ -131,7 +131,7 @@ print(c)
 而我们这里选择算出$s$得到$q$，是另一种解法。
 显然，这里要计算一个连续逆元序列的和，我们直接使用`Eisenstein`的结论即可。
 解题脚本如下：
-```python=
+```python
 from Crypto.Util.number import long_to_bytes
 import gmpy2
 
