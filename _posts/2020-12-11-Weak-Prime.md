@@ -26,7 +26,7 @@ tags:
 
 于是我试图搜索有关的论文，深入探究一下这个问题。然而，由于自己搜索水平有限，最终没有搜到和这个方法直接相关的论文。
 但也并不是一无所获。搜索过程中我复习了一遍`Coppersmith`相关攻击，并读了一些论文。
-而这篇论文：[`Factoring RSA moduli with weak prime factors`](https://eprint.iacr.org/2015/398.pdf), 让我意外的是居然在之后不久的`N1CTF2020`里用到了，几乎是完全一样的方法。
+而这篇论文：[`Factoring RSA moduli with weak prime factors`](https://eprint.iacr.org/2015/398.pdf)， 让我意外的是居然在之后不久的`N1CTF2020`里用到了，几乎是完全一样的方法。
 
 ## 2. 关于论文
 论文大致的意思是作者对`Coppersmith`的`Stereotyped messages Attack`进行了改进。
