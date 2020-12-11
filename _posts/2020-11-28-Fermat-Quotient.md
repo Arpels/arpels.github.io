@@ -13,8 +13,6 @@ tags:
 *  目录
 {:toc}
 
-# 从祥云杯的一题浅谈Fermat Quotient
-
 
 在祥云杯2020中，有一道名为`more_calc`的crypto题目。这道题目看题意，需要对一个连续的模$p$逆元序列进行求和。通过巧妙的推导，在避免求和的情况下即可得到`flag`。但如果直接求和可行吗？答案是可行的，需要用到1850年`Eisenstein`提出的关于`Fermat Quotient`的一个结论。
 本文即对`Fermat Quotient`进行简单介绍，并给出关于1850年`Eisenstein`的结论，以及它的证明推导。
