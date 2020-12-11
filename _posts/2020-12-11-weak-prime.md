@@ -15,11 +15,15 @@ tags:
 
 ## 1. 从CryptoCTF 2020 说起
 今年暑假的`CryptoCTF2020`，有一道`Decent RSA`让我印象挺深刻。常规的大数分解方法并不能分解给出的`n`。
+
 然而巧妙的是，在十一进制下，`n`表现出的形式非常漂亮。
 首先，其中出现了大量的`0`，并且没有紧挨着的非零位，也就是所有非零的数之间至少有一个零隔开。
 其次，非零的数除了`1`，其余均为`2`、`4`、`8`，都是`2`的倍数。
+
 那很显然，我们可以将其`11`进制的形式表示为多项式，利用多项式分解，完成对`n`的分解。
+
 这个方法很巧妙，但我自己尝试了一下，和题目中的`n`性质类似的，出现了大量的`0`和并且在某种进制下很好分解的`n`，并不是很容易找到。
+
 于是我试图搜索有关的论文，深入探究一下这个问题。然而，由于自己搜索水平有限，最终没有搜到和这个方法直接相关的论文。
 但也并不是一无所获。搜索过程中我复习了一遍`Coppersmith`相关攻击，并读了一些论文。
 而这篇论文：[`Factoring RSA moduli with weak prime factors`](https://eprint.iacr.org/2015/398.pdf), 让我意外的是居然在之后不久的`N1CTF2020`里用到了，几乎是完全一样的方法。
@@ -32,6 +36,7 @@ tags:
 
 这种形式生成的素数被作者称为`weak prime factors`。
 由于论文中已经给出了详细的证明和各种例子，所以此处就不再赘述了。
+
 论文如下：
 <iframe src="https://blog.arpe1s.xyz/files/Factoring RSA moduli with weak prime factors.pdf" style="width:700px; height:800px;" frameborder="0"></iframe>
 
@@ -40,6 +45,7 @@ tags:
 
 ## 3. N1CTF2020 easyRSA
 很巧的是之后在`N1CTF`中就用上了这篇论文。
+
 题目如下：
 ```python
 from Crypto.Util.number import *
@@ -80,6 +86,7 @@ print(N)
 np.save("A.npy", A)
 
 ```
+
 显然，题目分为两部分，第一部分中的`n`就是由这篇论文所讲的`weak prime`所相乘得到的。
 因此我们使用论文中描述的方法，首先根据`n`确定`M`的大小，再根据`M`选取符合要求的`k`和`c`，然后构造一个格如下：
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_af03ea77e978f4bf19d4880d2fd41659.png)
@@ -88,6 +95,7 @@ np.save("A.npy", A)
 
 ## 4. 代码实现
 我在`SageMath9.1`中给出了代码实现，并用论文中的两个例子，以及`N1CTF2020 easyRSA`的数据进行了测试。
+
 代码如下：
 ```python
 from tqdm import tqdm
