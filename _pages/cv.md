@@ -16,25 +16,36 @@ Education
 
 Work experience
 ======
+* Fall 2020 - Summer 2021: Intern Student
+  * Institute of Information Engineering, CAS
+  * Duties included: FHE
+  * Supervisor: Prof. MingSheng Wang
+
 * 2018 - 2020 : CTF Player
   * CNSS (Cohesion Network Security Studio at UESTC)
   * Duties included: Crypto
   * Supervisor: Prof. Xiaosong Zhang
+
+* 2018 - 2020 : Intern Student
+  * UESTC (University of Electronic Science and Technology of China)
+  * Duties included: BlockChain
+  * Supervisor: Prof. Ting Chen
 
 * Summer 2019: Intern Student
   * Institute of Information Engineering, CAS
   * Duties included: PSoC and CTF
   * Supervisor: Prof. Xiaorui Gong
 
-* Fall 2020 - Summer 2021: Intern Student
-  * Institute of Information Engineering, CAS
-  * Duties included: FHE
-  * Supervisor: Prof. MingSheng Wang
+
   
 Skills
 ======
 * CTF
   * Crypto
+
+* Homomorphic Encryption
+
+* Blockchain
 
 Publications
 ======
