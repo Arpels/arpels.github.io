@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* B.S. in Mathematics-Phisics Fundamental Science, University of Electronic Science and Technology of China, 2021
+* B.S. in Mathematics-Physics Fundamental Science, University of Electronic Science and Technology of China, 2021
 * M.S. in Cryptography, Institute of Information Engineering, CAS, 2024 (expected)
 
 Work experience
