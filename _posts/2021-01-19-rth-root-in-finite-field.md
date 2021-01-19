@@ -1,30 +1,56 @@
-# 浅谈高次剩余的求解
+---
+title: '浅谈高次剩余的求解'
+date: 2021-01-19
+permalink: /posts/2021/01/rth_root/
+tags:
+  - number theory
+  - quadratic residue
+  - AMM algorithm
+  - Cipolla algorithm
+---
 
-[toc]
+本文主要通过StarCTF2021的一道题目，浅谈高次剩余求解。
+
+*  目录
+{:toc}
 
 虽然已经很久不打CTF了，但有比赛了还是习惯性的瞅一眼crypto类题目。
-最近在`*CTF 2021`碰到了一题`little case`，看了一眼就确定是熟悉的套路。
-首先`wiener's attack`，然后`AMM算法`解有限域上的高次剩余。
+
+最近在`*CTF 2021`碰到了一题`little case`，看了一眼就确定是熟悉的套路。首先`wiener's attack`，然后`AMM算法`解有限域上的高次剩余。
+
 说起来这已经是第四次碰到这类题了，不妨做个总结。
 
 ## 1. 背景
 ### （1） 如何求解二/高次剩余？
 在学密码学时，大部分教科书都有专门的一个章节“二次剩余”，一般紧跟在原根章节之后。
+
 它们往往会从“整数a何时是模素数p完全平方数”这个古老的问题说起，给出二次剩余的定义与基本性质，再谈到欧拉判别法、勒让德符号、雅可比符号、二次互反律，最后引申到欧拉伪素数、Solovay-Strassen检验法、Rabin密码体制和零知识证明。
+
 然而，国内不少教科书并不会告诉学生，对于一个很一般的、模数为素数或者不是素数的二次剩余，如何求解？以及如果不是二次，而是三次或者更高次，如何求解？
+
 这个问题相关论文有很多，发展到最后，产生了几种比较主流的，适用于大多数情况的方法。
+
 关于有限域上的二次剩余，比较主流的两种方法是`Cipolla-Lehmer Algorithm`和`Tonelli-Shanks Algorithm`。
+
 关于有限域上的高次剩余，比较主流的两种方法是在二次剩余的基础上形成的，由`H.C. Williams`改进后的`Cipolla-Lehmer`算法和基于`Tonelli-Shanks`的`AMM`算法。
+
 而当模数为合数时，一般简单的处理方法是根据算术基本定理，将模数分解为素数乘积，分别求解后再使用中国剩余定理。此外，对于一些模数和指数较为特殊的情况，有其相对于一般算法更快的特殊算法，比如`Pocklington Algorithm`。
+
 二次剩余两个算法的原理详见[二次剩余：OI Wiki](https://oi-wiki.org/math/quad-residue/)。
+
 高次剩余两个算法的原理详见第二部分提到的论文。
+
 [更多请见：二次剩余wiki](https://en.wikipedia.org/wiki/Quadratic_residue)
 
 ## （2） CTF中相关题目
 之所以说`*CTF 2021`这次是第四次碰到，因为我自从2017年开始打CTF以来，已经碰到过三次了。
+
 第一次是`Hackergame 2019`的`十次方根`，出题人在wp中提到，肯定有比他的方法更优雅的开根方法。此外，他还提到2018高校运维赛的`AzureRSA`以及`De1taCTF 2019`的`babyrsa`，让他怀疑两次比赛出题人是否认为模n意义下开高次方是不可能的。题目详见[Hackergame2019-十次方根](https://github.com/ustclug/hackergame2019-writeups/blob/master/official/%E5%8D%81%E6%AC%A1%E6%96%B9%E6%A0%B9/README.md)。
+
 确实，在这次`Hackergame`之前，我对这个问题也不太清楚。在几年前准备某年的`CNSS`的招新题目的时候，有一题用了`Rabin`体制，涉及到二次剩余，我当时用的是`Tonelli-Shanks`。当时曾经问过`Nu1L`的`gmcn`师傅高次剩余该用什么算法，不过我们当时都不知道有啥算法。
+
 第二次是紧随第一次的`NCTF 2019`的`easyrsa`。南邮的`soreat_u`师傅找到了`AMM算法`的论文，并在实现之后出成了题目。具体细节详见[NCTF2019-easyrsa](https://blog.soreatu.com/posts/intended-solution-to-crypto-problems-in-nctf-2019/#easyrsa909pt-2solvers)。
+
 第三次是`CTFshow`的练习题`unusualrsa5`，和第二次题目几乎相同，只是改了一下参数，而且由于指数设置的太小，不需要`AMM算法`，用`SageMath`或者`Mathematica`可以直接开出来。
 算上这次`*CTF 2021`就是第四次了。
 
@@ -32,8 +58,11 @@
 ## 2. 理论与论文
 ### （1） Cipolla 与 AMM 区别
 两者各有其优势劣势。
+
 大多数情况下，我们倾向于用`AMM算法`，因为`Cipolla算法`中很关键的几步需要域扩张，这是很麻烦的。
+
 而`AMM`在$r^v|(q-1)$中的$v$很大时，运算速度会非常非常慢，这时我们就又倾向于`Cipolla`了。
+
 此外，在18年`Gook Hwa Cho`的一篇论文中，他对`Cipolla`做了改进，降低了算法复杂度，并且$r$不一定必须要是素数。而`AMM`算法中$r$必须是素数，如果不是素数的情况，那我们必须自己先对$r$进行一些处理，比如分解$r$，之后解两次。
 
 ### （2） Cipolla-Lehmer
@@ -87,10 +116,15 @@ if __name__ == '__main__':
 12732299056226934743176360461051108799706450051853623472248552066649321279227693844417404789169416642586313895494292082308084823101092675162498154181999270703392144766031531668783213589136974486867571090321426005719333327425286160436925591205840653712046866950957876967715226097699016798471712274797888761218915345301238306497841970203137048433491914195023230951832644259526895087301990301002618450573323078919808182376666320244077837033894089805640452791930176084416087344594957596135877833163152566525019063919662459299054294655118065279192807949989681674190983739625056255497842063989284921411358232926435537518406L
 
 ```
+
 观察到`d`很小，适用`wiener's attack`，直接用现成的轮子即可解出`msg`。
+
 [Wiener's Attack, Python Implementation](https://github.com/pablocelayes/rsa-wiener-attack)
+
 然后`AMM`算法解出一个解，之后求出所有的根即可。如何求所有的根？参考`soreat_u`师傅博客给出的`stackexchange`上的两个链接即可。
+
 [How to get the other roots?](https://stackoverflow.com/questions/6752374/cube-root-modulo-p-how-do-i-do-this)
+
 [Finding the n-th root of unity in a finite field](https://crypto.stackexchange.com/questions/63614/finding-the-n-th-root-of-unity-in-a-finite-field)
 
 ### （2） 解题代码
