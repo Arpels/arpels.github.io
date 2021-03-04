@@ -3,7 +3,6 @@ title: '浅谈高次剩余的求解'
 date: 2021-01-19
 permalink: /posts/2021/01/rth_root/
 tags:
-  - number theory
   - quadratic residue
   - AMM algorithm
   - Cipolla algorithm
