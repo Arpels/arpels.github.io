@@ -1,7 +1,7 @@
 ---
 title: 'Ubuntu 20.04 虚拟机安装及环境配置记录'
-date: 2021-02-28
-permalink: /posts/2021/02/Ubuntu Install/
+date: 2021-01-18
+permalink: /posts/2021/01/Ubuntu Install/
 tags:
   - Ubuntu
   - SEAL
