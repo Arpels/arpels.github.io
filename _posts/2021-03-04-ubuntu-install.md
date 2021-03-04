@@ -6,7 +6,9 @@ tags:
   - Ubuntu 20.04
 ---
 
+
 Ubuntu 20.04 装机记录。
+
 
 *  目录
 {:toc}
