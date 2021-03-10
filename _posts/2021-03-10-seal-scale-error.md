@@ -38,7 +38,7 @@ There are two encryption parameters that are necessary to set:
 
 第一个参数`poly_modulus_degree`推荐的是`4096, 8192, 16384, 32768`。如果需要更大的，则要在初始化的时候用`sec_level::none`忽视安全级别来开启。
 
-第二个参数`coeff_modulus`的bit-length之和受到`poly_modulus_degree`的限制，如下表。
+第二个参数`coeff_modulus`的`bit-length`之和受到`poly_modulus_degree`的限制，如下表。
 
 ```
         +----------------------------------------------------+
