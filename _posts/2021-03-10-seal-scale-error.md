@@ -1,7 +1,7 @@
 ---
 title: 'SEAL库 CKKS方案 "scale out of bounds" 报错分析'
 date: 2021-03-10
-permalink: /posts/2021/03/ubuntu_install/
+permalink: /posts/2021/03/sea_scale_error/
 tags:
   - Homomorphic Encryption
   - SEAL
@@ -12,6 +12,9 @@ tags:
 *  目录
 {:toc}
 
+最近在尝试写一些同态加密的小玩意，其中在用SEAL库的时候，一开始没怎么注意乘法次数，以为16384作为poly_modulus已经足够了，结果跑代码时报错"scale out of bounds"。
+
+于是查了一些资料，尝试了一下怎么解决这个报错。
 
 ## 0. 参考的Issues
 [Issues with defining CoeffModulus for CKKS](https://github.com/microsoft/SEAL/issues/128)
@@ -184,7 +187,7 @@ left in the coeff_modulus, the remaining prime must be larger than S by a few bi
 to preserve the pre-decimal-point value of the plaintext.
 ```
 
-正如图中所说，每一步`rescale`，也就是`rescale_to_next_inplace()`，都会用掉一个素数。因此电路的深度，也就是乘法的深度，不能超过初始参数中`coeff_modulus`的个数。否则就会报错`scale out of bounds`。
+正如图中所说，每一步`rescale`，也就是`rescale_to_next_inplace()`，都会用掉一个素数。而每次乘法之后必然是要`rescale`的。因此电路的深度，也就是乘法的深度，不能超过初始参数中`coeff_modulus`的个数。否则就会报错`scale out of bounds`。
 
 当然，目前的大部分需要用CKKS的运算还是可以满足的，它们的level基本都在20以下。对于一些level非常高的，或许可以考虑用其他方法。
 
