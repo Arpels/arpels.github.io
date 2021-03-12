@@ -110,13 +110,13 @@ ECM 的基本思路如下。
 
 对于 ECM，选择随机的曲线，并希望它的阶是 smooth 的。由于在 n 是合数的曲线上找一个点是困难的，我们首先选择点 $P$，而后再确定曲线。
 
-而对于 QiCheng，要求 $\# E(\mathbb{F} _p) = p$，因此先建立曲线来保证。由于先建立曲线，所以直接找点就没那么容易， QiCheng 想了个办法来避免直接找点。于是他用了 `n-th division polynomial` ，对一个随机选取的 $x$ 计算 $\Psi _n(P) = \Psi _n(x)$，来作为一些位于 $E(\mathbb{F} _p)$ 上的点的 $x$ 坐标。
+而对于 QiCheng，要求 $E(\mathbb{F} _p)$ 的阶为 $p$ （博客主题的问题，这里转义井号会渲染不了公式），因此先建立曲线来保证。由于先建立曲线，所以直接找点就没那么容易， QiCheng 想了个办法来避免直接找点。于是他用了 `n-th division polynomial` ，对一个随机选取的 $x$ 计算 $\Psi _n(P) = \Psi _n(x)$，来作为一些位于 $E(\mathbb{F} _p)$ 上的点的 $x$ 坐标。
 
-QiCheng 在曲线建立上用的是 `CM method`，全称是 `complex multiplication`。
+QiCheng 在曲线建立上用的是 `CM method`，全称是 `complex multiplication`。这种方法会计算曲线的 `j-invariant` 作为有限域上 `Hilbert polynomial`，也就是 $H_{-D}x$ 的根。对于同一个 `j-invariant`，有两条不同的曲线，分别有 $p$ 和 $p-2$ 个点。QiCheng 的方法无法区分这两条曲线，所以他对两种都算了一遍。
 
-这种方法计算曲线的 `j-invariant` 作为 $\mathbb{F} _p$ 上 `Hilbert polynomial` $H_{-D}{x}$ 的根。对于同一个 `j-invariant`，有两条不同的曲线，分别有 $p$ 和 $p-2$ 个点。QiCheng 的方法无法区分这两条曲线，所以他对两种都算了一遍。但 2007 年在 Rubin 和 Silverberg 的 paper 里，说明了只需要一点小改动就可以区分这两条曲线。
+但 2007 年在 Rubin 和 Silverberg 的 paper 里，说明了只需要一点小改动就可以区分这两条曲线。
 
-在 QiCheng 2002 年的论文中，他实现了计算 `j-invariant` 作为 $degree = 1$ 的 $H_{-D}{x}$ 的根。$degree = 1$ 的 `Hilbert polynomial` 一共有六种，因此我们可以看到 2002 年的那篇论文中只能处理 $\lbrace 3, 11, 19, 43, 67, 163 \rbrace$ 这六种情况。
+在 QiCheng 2002 年的论文中，他实现了计算 `j-invariant` 作为 $degree = 1$ 的 $H_{-D}x$ 的根。$degree = 1$ 的 `Hilbert polynomial` 一共有六种，因此我们可以看到 2002 年的那篇论文中只能处理 $\lbrace 3, 11, 19, 43, 67, 163 \rbrace$ 这六种情况。
 
 论文中对思想的阐述如下：
 
