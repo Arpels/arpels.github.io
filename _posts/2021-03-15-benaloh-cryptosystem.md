@@ -68,9 +68,7 @@ $$
 
 ### （2） `Gröbner basis` 简述
 * 定义性质等等可以参考我之前的一篇博文：[Gröbner Basis及其在Related Message Attack中的应用](https://blog.arpe1s.xyz/posts/2019/11/Gr%C3%B6bner%20Basis%E5%8F%8A%E5%85%B6%E5%9C%A8Related%20Message%20Attack%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/)。
-
 或者参考这个网站：[scholarpedia - Groebner_basis](http://www.scholarpedia.org/article/Groebner_basis)。
-
 或者阅读计算代数、近世代数相关书籍。
 
 * 计算 `Gröbner basis` 的算法：`Buchberger` 算法。
