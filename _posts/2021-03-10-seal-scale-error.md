@@ -1,7 +1,7 @@
 ---
 title: 'SEAL库 CKKS方案 "scale out of bounds" 报错分析'
 date: 2021-03-10
-permalink: /posts/2021/03/sea_scale_error/
+permalink: /posts/2021/03/seal_scale_error/
 tags:
   - Homomorphic Encryption
   - SEAL
@@ -12,7 +12,7 @@ tags:
 *  目录
 {:toc}
 
-最近在尝试写一些同态加密的小玩意，其中在用SEAL库的时候，一开始没怎么注意乘法次数，以为`16384`作为`poly_modulus`已经足够了，结果跑代码时报错`"scale out of bounds"`。
+最近在尝试写一些同态加密的小玩意，其中在用SEAL库的时候，一开始没怎么注意乘法次数，以为 `16384` 作为 `poly_modulus` 已经足够了，结果跑代码时报错 `"scale out of bounds"`。
 
 于是查了一些资料，尝试了一下解决这个报错。
 
@@ -36,9 +36,9 @@ There are two encryption parameters that are necessary to set:
         - coeff_modulus ([ciphertext] coefficient modulus);
 ```
 
-第一个参数`poly_modulus_degree`推荐的是`4096, 8192, 16384, 32768`。如果需要更大的，则要在初始化的时候用`sec_level::none`忽视安全级别来开启。
+第一个参数 `poly_modulus_degree` 推荐的是 `4096, 8192, 16384, 32768`。如果需要更大的，则要在初始化的时候用 `sec_level::none` 忽视安全级别来开启。
 
-第二个参数`coeff_modulus`的`bit-length`之和受到`poly_modulus_degree`的限制，如下表。
+第二个参数 `coeff_modulus`的`bit-length` 之和受到 `poly_modulus_degree` 的限制，如下表。
 
 ```
         +----------------------------------------------------+
@@ -60,14 +60,14 @@ terminate called after throwing an instance of 'std::invalid_argument'
   what():  encryption parameters are not set correctly
 ```
 
-其次，除去首尾，中间的要设置的相近，并和`scale`大小相近，这样在`rescale`时会很方便。
+其次，除去首尾，中间的要设置的相近，并和 `scale` 大小相近，这样在 `rescale` 时会很方便。
 
-此外，指定`bit-length`的作为`coeff_modulus`的数是有限的，并不是想找多少就有多少。
+此外，指定 `bit-length` 的作为 `coeff_modulus` 的数是有限的，并不是想找多少就有多少。
 
 
 
 ## 2. 为什么这么设置
-### （1） `coeff_modulus`受`poly_modulus_degree`限制的规则
+### （1） `coeff_modulus` 受 `poly_modulus_degree` 限制的规则
 可以参考这个问题：[Issues with defining CoeffModulus for CKKS](https://github.com/microsoft/SEAL/issues/128)
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_bd1bd3efd2ff3d9582a5ee509dc65e72.png)
@@ -114,14 +114,14 @@ terminate called after throwing an instance of 'std::invalid_argument'
 
 下图论文出处：[A Full RNS Variant of Approximate Homomorphic Encryption](https://eprint.iacr.org/2018/931.pdf)
 
-所以对于确定的`bit-length`，它们是有限的，写代码时并不是想找多少就有多少。
+所以对于确定的 `bit-length`，它们是有限的，写代码时并不是想找多少就有多少。
 
-相对的，如果需要较多的数，自然是要选大一点的`poly_modulus_degree`，这样`coeff_modulus`可以取得更多，`bit-length`也可以设置的相对较大。
+相对的，如果需要较多的数，自然是要选大一点的 `poly_modulus_degree`，这样 `coeff_modulus` 可以取得更多，`bit-length` 也可以设置的相对较大。
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_9fc22e5875938ca73ff779a974a8d62e.png)
 
 ### （4） rescaling
-`rescaling`是CKKS方案独有的操作，正是这个操作让它不同于其他方案，可以很方便地处理浮点数，从而被AI等领域青睐。
+`rescaling` 是 CKKS 方案独有的操作，正是这个操作让它不同于其他方案，可以很方便地处理浮点数，从而被 AI 等领域青睐。
 
 官方文档：
 ```
@@ -187,11 +187,11 @@ left in the coeff_modulus, the remaining prime must be larger than S by a few bi
 to preserve the pre-decimal-point value of the plaintext.
 ```
 
-正如图中所说，每一步`rescale`，也就是`rescale_to_next_inplace()`，都会用掉一个素数。而每次乘法之后必然是要`rescale`的。因此电路的深度，也就是乘法的深度，不能超过初始参数中`coeff_modulus`的个数。否则就会报错`"scale out of bounds"`。
+正如图中所说，每一步 `rescale`，也就是 `rescale_to_next_inplace()`，都会用掉一个素数。而每次乘法之后必然是要 `rescale` 的。因此电路的深度，也就是乘法的深度，不能超过初始参数中 `coeff_modulus` 的个数。否则就会报错 `"scale out of bounds"`。
 
-当然，目前的大部分需要用CKKS的运算还是可以满足的，它们的`level`基本都在20以下。对于一些`level`非常高的，或许可以考虑用其他方法。
+当然，目前的大部分需要用CKKS的运算还是可以满足的，它们的 `level` 基本都在20以下。对于一些 `level` 非常高的，或许可以考虑用其他方法。
 
-改进的方法的话，或许未来SEAL库的CKKS方案会有`bootstrapping`，但目前来看微软的开发者还没有这个打算。SEAL库目前是不支持`bootstrapping`的。因为据开发者说，CKKS的`bootstrapping`会积累错误，它和Gentry提出的`bootstrapping`概念是不一样的。
+改进的方法的话，或许未来SEAL库的CKKS方案会有 `bootstrapping`，但目前来看微软的开发者还没有这个打算。SEAL 库目前是不支持 `bootstrapping` 的。因为据开发者说，CKKS 的 `bootstrapping` 会积累错误，它和 Gentry 提出的 `bootstrapping` 概念是不一样的。
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_bec421203c3eb16445eeb6c59831d874.png)
 
@@ -200,7 +200,7 @@ to preserve the pre-decimal-point value of the plaintext.
 目前我还没有找到什么特别好的方法。
 
 ### （1） 方法一
-我所知的第一种方法是增大所用的参数，这样就能满足较多次数的`rescale`。
+我所知的第一种方法是增大所用的参数，这样就能满足较多次数的 `rescale`。
 
 当然相对的，这样会需要更多的内存和运行时间。
 
@@ -221,14 +221,14 @@ parms.set_poly_modulus_degree(poly_modulus_degree);
 parms.set_coeff_modulus(CoeffModulus::Create(poly_modulus_degree, mod));
 ```
 
-如果有更大的需求，可以用`sec_level::none`来开启。
+如果有更大的需求，可以用 `sec_level::none` 来开启。
 
-参考这个issue：[Polynomial moduli beyond 32768](https://github.com/microsoft/SEAL/issues/261)
+参考这个 issue：[Polynomial moduli beyond 32768](https://github.com/microsoft/SEAL/issues/261)
 
 ### （2） 方法二
-第二种方法则是不用SEAL。在CKKS方案的提出者的论文链接里可以找到他们写过一个叫`HEAAN`的库。这个库是支持`bootstrapping`的。虽然是2017年的库，但拿来改一改应该还是可以用的。
+第二种方法则是不用 SEAL。在 CKKS 方案的提出者的论文链接里可以找到他们写过一个叫 `HEAAN` 的库。这个库是支持 `bootstrapping` 的。虽然是 2017 年的库，但拿来改一改应该还是可以用的。
 
-[github-HEAAN库](https://github.com/snucrypto/HEAAN)
+[github-HEAAN](https://github.com/snucrypto/HEAAN)
 
 ```
 HEAAN is software library that implements homomorphic encryption (HE) that supports 
