@@ -189,9 +189,9 @@ to preserve the pre-decimal-point value of the plaintext.
 
 正如图中所说，每一步 `rescale`，也就是 `rescale_to_next_inplace()`，都会用掉一个素数。而每次乘法之后必然是要 `rescale` 的。因此电路的深度，也就是乘法的深度，不能超过初始参数中 `coeff_modulus` 的个数。否则就会报错 `"scale out of bounds"`。
 
-当然，目前的大部分需要用CKKS的运算还是可以满足的，它们的 `level` 基本都在20以下。对于一些 `level` 非常高的，或许可以考虑用其他方法。
+当然，目前的大部分需要用 CKKS 的运算还是可以满足的，它们的 `level` 基本都在20以下。对于一些 `level` 非常高的，或许可以考虑用其他方法。
 
-改进的方法的话，或许未来SEAL库的CKKS方案会有 `bootstrapping`，但目前来看微软的开发者还没有这个打算。SEAL 库目前是不支持 `bootstrapping` 的。因为据开发者说，CKKS 的 `bootstrapping` 会积累错误，它和 Gentry 提出的 `bootstrapping` 概念是不一样的。
+改进的方法的话，或许未来 SEAL 库的 CKKS 方案会有 `bootstrapping`，但目前来看微软的开发者还没有这个打算。SEAL 库目前是不支持 `bootstrapping` 的。因为据开发者说，CKKS 的 `bootstrapping` 会积累错误，它和 Gentry 提出的 `bootstrapping` 概念是不一样的。
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_bec421203c3eb16445eeb6c59831d874.png)
 
