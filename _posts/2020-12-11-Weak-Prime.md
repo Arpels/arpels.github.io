@@ -1,5 +1,5 @@
 ---
-title: '浅谈Weak Prime Factors'
+title: '浅谈 Weak Prime Factors'
 date: 2020-12-11
 permalink: /posts/2020/12/Weak Prime/
 tags:
