@@ -1,5 +1,5 @@
 ---
-title: '浅谈Fermat Quotient'
+title: '浅谈 Fermat Quotient'
 date: 2020-11-28
 permalink: /posts/2020/11/Fermat Quotient/
 tags:
