@@ -1,5 +1,5 @@
 ---
-title: 'SEAL库 CKKS方案 "scale out of bounds" 报错分析'
+title: 'SEAL 库 CKKS 方案 "scale out of bounds" 报错分析'
 date: 2021-03-10
 permalink: /posts/2021/03/seal_scale_error/
 tags:
