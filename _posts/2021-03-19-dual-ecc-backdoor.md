@@ -197,3 +197,9 @@ for i in tqdm(range(256)):
 结果如下：
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_239c386ee7664396380681cde98a39ee.png)
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
