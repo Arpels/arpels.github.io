@@ -168,3 +168,9 @@ if __name__ == '__main__':
 ```
 得到的结果如下：
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_1a67ce9f828b7c03d7329f7c6ca33b95.png)
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
