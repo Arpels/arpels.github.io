@@ -326,3 +326,7 @@ print ("[*] s/t =", RA(s)/RA(t))
 和丢番图逼近相关的一个问题是 `rational reconstruction`，在 Shoup 的数论书里直接把丢番图逼近和它归为一类，但其实两者还是有些区别的。
 
 详细内容可以参考 [SageMath - rational reconstruction](https://doc.sagemath.org/html/en/reference/rings_standard/sage/arith/misc.html) 或是 wikipedia。
+
+> 声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。
+> 
+> This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).
