@@ -141,3 +141,9 @@ git commit --allow-empty -n -m "Initial commit".
 安装好的效果如下：
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_a82adf8dfb28f89be6d029e41c5c98e1.png)
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
