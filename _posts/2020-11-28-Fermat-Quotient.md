@@ -146,3 +146,9 @@ e = 0x10001
 d = gmpy2.invert(e, (p-1) * (q-1))
 print (long_to_bytes(pow(c, d, p*q)))
 ```
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
