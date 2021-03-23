@@ -218,3 +218,9 @@ Ds = [3, 4, 7, 8, 11, 19, 43, 67, 163, 15, 20, 24, 35, 40, 51, 52, 88, 91, 115, 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_3d11b15c2f3cc4b0a2f52a7c7c28e384.png)
 
 ![](https://codimd.s3.shivering-isles.com/demo/uploads/upload_6f6c7b6a55814adc67d8464f9f2cb3a5.png)
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
