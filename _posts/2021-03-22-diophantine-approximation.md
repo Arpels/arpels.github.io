@@ -13,9 +13,9 @@ tags:
 *  目录
 {:toc}
 
-> 声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。
-> 
-> This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+```
+This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+```
 
 去年暑假推免之后，导师让我看了一本 Shoup 的计算数论。其中看到了很有意思的一节，叫 `rational reconstruction`。
 
