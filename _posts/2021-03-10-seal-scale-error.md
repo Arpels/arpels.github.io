@@ -238,3 +238,9 @@ same with floating point operation errors. The scheme in this library is on the 
 "Homomorphic Encryption for Arithmetic of Approximate Numbers" 
 (https://eprint.iacr.org/2016/421.pdf).
 ```
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
