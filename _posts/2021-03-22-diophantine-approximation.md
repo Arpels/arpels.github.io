@@ -13,9 +13,6 @@ tags:
 *  目录
 {:toc}
 
-```
-This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).
-```
 
 去年暑假推免之后，导师让我看了一本 Shoup 的计算数论。其中看到了很有意思的一节，叫 `rational reconstruction`。
 
@@ -327,6 +324,8 @@ print ("[*] s/t =", RA(s)/RA(t))
 
 详细内容可以参考 [SageMath - rational reconstruction](https://doc.sagemath.org/html/en/reference/rings_standard/sage/arith/misc.html) 或是 wikipedia。
 
-> 声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
 > 
-> This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
