@@ -205,3 +205,9 @@ print (binascii.a2b_hex(hex(m)[2:].strip('L')))
 ## 6. 参考文献
 1. 王东明 等《计算机代数》（第二版）
 2. `Don Coppersmith` 等 *`Low-Exponent RSA with Related Messages`*
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
