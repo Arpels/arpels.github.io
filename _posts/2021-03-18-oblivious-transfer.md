@@ -1267,3 +1267,9 @@ for _ in range(512):
 
 ## 8. 总结
 不经意传输虽然在 2020 年以前的 CTF 里没怎么出现过，但近几年算是一个小热点。还是值得学习和积累相关知识的。
+
+***
+
+> **声明：本文采用 [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) 授权。**
+> 
+> **This work is licensed under a [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/).**
