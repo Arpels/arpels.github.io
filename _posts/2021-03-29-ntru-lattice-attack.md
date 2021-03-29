@@ -151,11 +151,7 @@ $$
 观察上面论文里格子的构造，显然，因为 
 
 $$
-\begin{pmatrix} f & k \\ \end{pmatrix} 
-\cdot
-\begin{pmatrix} I & H \\ 0 & q \\ \end{pmatrix}
-=
-\begin{pmatrix} f & g \\ \end{pmatrix}
+\begin{pmatrix} f & k \\ \end{pmatrix} \cdot \begin{pmatrix} I & H \\ 0 & q \\ \end{pmatrix} = \begin{pmatrix} f & g \\ \end{pmatrix}
 $$ 
 
 ，所以私钥构成的向量确实在这个格子上。
