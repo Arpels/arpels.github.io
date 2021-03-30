@@ -3,8 +3,6 @@ title: 'DSA Biased K Attack'
 date: 2019-10-18
 permalink: /posts/2019/10/DSA Biased K Attack/
 tags:
-  - RSA
-  - DSA
   - Lattice
 ---
 
