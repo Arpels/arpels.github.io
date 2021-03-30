@@ -3,7 +3,6 @@ title: '浅谈 NTRU Lattice Attack'
 date: 2021-03-29
 permalink: /posts/2021/03/ntru_lattice_attack/
 tags:
-  - NTRU
   - Lattice
 ---
 
