@@ -11,7 +11,7 @@ redirect_from:
 
 ## CNSS
 | 友链 | Link Exchange |
-| -------- | -------- |
+| :---- | :---- |
 | [![CNSS](https://blog.cnss.io/images/favicon/android-chrome-192x192.png =50x50)](https://blog.cnss.io/) | CNSS，凝聚网络安全工作室 | 
 | [![pzhxbz](https://avatars.githubusercontent.com/u/17405473?v=4 =50x50)](http://pzhxbz.cn/) | pzhxbz's blog |
 | [![plusls](https://avatars.githubusercontent.com/u/23459592?v=4 =50x50)](https://blog.plusls.com/) | plusls' blog |
