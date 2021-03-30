@@ -203,6 +203,17 @@ defaults:
       comments: true
       share: true
       related: true
+  # _hobbies
+  - scope:
+      path: ""
+      type: hobbies
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
   # _pages
   - scope:
       path: ""
