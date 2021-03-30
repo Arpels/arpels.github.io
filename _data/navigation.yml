@@ -4,7 +4,13 @@ main:
     url: /publications/
         
   - title: "Blog Posts"
-    url: /year-archive/
+    url: /posts/
+    
+  - title: "Interest and Hobbies"
+    url: /hobbies/
+    
+  - title: "Friends"
+    url: /friends/
     
   - title: "CV"
     url: /cv/
