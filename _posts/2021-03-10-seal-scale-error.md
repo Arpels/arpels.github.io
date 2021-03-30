@@ -4,7 +4,6 @@ date: 2021-03-10
 permalink: /posts/2021/03/seal_scale_error/
 tags:
   - Homomorphic Encryption
-  - SEAL
 ---
 
 "scale out of bounds" 报错分析。
