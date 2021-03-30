@@ -4,6 +4,7 @@ date: 2019-10-18
 permalink: /posts/2019/10/DSA Biased K Attack/
 tags:
   - Lattice
+  - RSA
 ---
 
 本文主要介绍 `RSA` 签名与 `DSA` 签名在CTF中的常见题目。
