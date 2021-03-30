@@ -3,8 +3,8 @@ title: '浅谈 Weak Prime Factors'
 date: 2020-12-11
 permalink: /posts/2020/12/Weak Prime/
 tags:
-  - RSA
   - Lattice
+  - RSA
 ---
 
 因为某个比赛的一道题去搜索论文，没有搜到但碰巧看了另一篇论文。想不到很快就在另一个比赛用上了。实在是“有心栽花花不开，无心插柳柳成荫”。
