@@ -3,7 +3,7 @@ title: '浅谈高次剩余的求解'
 date: 2021-01-19
 permalink: /posts/2021/01/rth_root/
 tags:
-  - number theory
+  - Number Theory
 ---
 
 本文主要通过 `*CTF 2021` 的一道题目，浅谈高次剩余求解。
