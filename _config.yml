@@ -206,7 +206,7 @@ defaults:
   # _hobbies
   - scope:
       path: ""
-      type: hobbies
+      type: posts
     values:
       layout: single
       author_profile: true
