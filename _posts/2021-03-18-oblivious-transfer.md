@@ -3,7 +3,7 @@ title: '浅谈 Oblivious transfer'
 date: 2021-03-18
 permalink: /posts/2021/03/oblivious_transfer/
 tags:
-  - OT
+  - Oblivious Transfer
 ---
 
 最近不经意传输相关的题目在 CTF 里出现了不少次，学习之后记录一下。
