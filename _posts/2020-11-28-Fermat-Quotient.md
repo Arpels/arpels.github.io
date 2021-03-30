@@ -3,7 +3,7 @@ title: '浅谈 Fermat Quotient'
 date: 2020-11-28
 permalink: /posts/2020/11/Fermat Quotient/
 tags:
-  - number theory
+  - Number Theory
 ---
 
 本文主要通过祥云杯2020的一道题目，浅谈 `Fermat Quotient`。
