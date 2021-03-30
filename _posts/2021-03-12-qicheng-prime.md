@@ -4,7 +4,6 @@ date: 2021-03-12
 permalink: /posts/2021/03/qicheng_prime/
 tags:
   - RSA
-  - Factorization
 ---
 
 对使用一类特定素数乘积的模数的分解。
