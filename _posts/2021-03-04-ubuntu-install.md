@@ -4,7 +4,6 @@ date: 2021-03-04
 permalink: /posts/2021/03/ubuntu_install/
 tags:
   - Ubuntu
-  - SEAL
 ---
 
 Ubuntu 20.04 装机记录。
