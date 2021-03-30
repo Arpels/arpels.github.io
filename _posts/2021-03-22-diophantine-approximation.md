@@ -3,9 +3,7 @@ title: '浅谈 Diophantine approximation'
 date: 2021-03-22
 permalink: /posts/2021/03/diophantine_approximation/
 tags:
-  - diophantine approximation
-  - rational reconstruction
-  - continued fraction
+  - Number Theory
 ---
 
 去年看的东西，如何从实数恢复成分数。最近突然想起来，补一篇博客。
