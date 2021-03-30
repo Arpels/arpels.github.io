@@ -3,9 +3,7 @@ title: 'Gröbner Basis 及其在 Related Message Attack 中的应用'
 date: 2019-11-22
 permalink: /posts/2019/11/Gröbner Basis及其在Related Message Attack中的应用/
 tags:
-  - Gröbner Basis
-  - Related Message Attack
-  - Asymmetric
+  - RSA
 ---
 
 本文主要介绍 `Gröbner` 基基本概念及其在 `Related Message Attack` 中的应用。
