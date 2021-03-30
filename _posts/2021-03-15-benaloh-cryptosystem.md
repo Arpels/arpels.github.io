@@ -3,7 +3,7 @@ title: '浅谈 Benaloh cryptosystem'
 date: 2021-03-15
 permalink: /posts/2021/03/benaloh/
 tags:
-  - Benaloh
+  - Public-key Cryptography
 ---
 
 最近连续两次在 CTF 里看到 `Benaloh cryptosystem`，学习后简单记录一下。
