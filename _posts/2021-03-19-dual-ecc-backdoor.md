@@ -3,8 +3,7 @@ title: '浅谈 Dual_EC_DRBG'
 date: 2021-03-19
 permalink: /posts/2021/03/dual_ec_backdoor/
 tags:
-  - ecc
-  - backdoor
+  - ECC
 ---
 
 上周在 `UTCTF 2021` 里看到了一道相关题目 `Sleeves`。虽然难度并不大，不过背景故事还挺有意思的。
