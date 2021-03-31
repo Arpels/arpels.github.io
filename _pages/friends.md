@@ -39,4 +39,6 @@ redirect_from:
 | <a href="https://www.tangbao.me/"><img src="https://avatars.githubusercontent.com/u/12832546?v=4" width = "50" height = "50"/></a> | Zhongze Tang's Home Page |
 | <a href="https://zry.io/"><img src="https://avatars.githubusercontent.com/u/9990159?v=4" width = "50" height = "50"/></a> | zry98's blog |
 | <a href="http://120.79.211.91/"><img src="https://avatars.githubusercontent.com/u/32336251?v=4" width = "50" height = "50"/></a> | C0ss4ck's blog |
+| <a href="https://qsang.xin/"><img src="https://avatars.githubusercontent.com/u/42643408?v=4" width = "50" height = "50"/></a> | 姜姜酱的博客 |
+| <a href="https://tearsjin.github.io/"><img src="https://avatars.githubusercontent.com/u/56160386?v=4" width = "50" height = "50"/></a> | K1rit0's Blog |
 
