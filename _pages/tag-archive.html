@@ -16,6 +16,8 @@ author_profile: true
   {% endfor %}
 {% endfor %}
 
+
+{% include base_path %}
 {% include group-by-array collection=site.hobbies field="tags" %}
 
 {% for tag in group_names %}
