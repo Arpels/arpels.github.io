@@ -218,7 +218,6 @@ defaults:
       share: true
       related: true
       sort_by: date
-      sort_order: reverse
   # _pages
   - scope:
       path: ""
