@@ -15,7 +15,7 @@ A list of all the posts and pages found on the site. For you robots out there is
   {% include archive-single.html %}
 {% endfor %}
 
-<h2>Interests and Hobbies</h2>
-{% for post in site.hobbies %}
+<h2>Essay</h2>
+{% for post in site.essay %}
   {% include archive-single.html %}
 {% endfor %}
