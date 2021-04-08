@@ -17,12 +17,12 @@ author_profile: true
 {% endfor %}
 
 {% include base_path %}
-{% include group-by-array collection=site.hobbies field="categories" %}
+{% include group-by-array collection=site.essay field="categories" %}
 
 {% for category in group_names %}
-  {% assign hobbies = group_items[forloop.index0] %}
+  {% assign essays = group_items[forloop.index0] %}
   <h2 id="{{ category | slugify }}" class="archive__subtitle">{{ category }}</h2>
-  {% for post in hobbies %}
+  {% for post in essays %}
     {% include archive-single.html %}
   {% endfor %}
 {% endfor %}
