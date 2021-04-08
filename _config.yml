@@ -188,7 +188,7 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-  hobbies:
+  essay:
     output: true
     permalink: /:collection/:path/
 
@@ -206,7 +206,7 @@ defaults:
       comments: true
       share: true
       related: true
-  # _hobbies
+  # _essay
   - scope:
       path: ""
       type: hobbies
