@@ -209,7 +209,7 @@ defaults:
   # _essay
   - scope:
       path: ""
-      type: hobbies
+      type: essay
     values:
       layout: single
       author_profile: true
