@@ -1,5 +1,5 @@
 ---
-title: 'Project Euler Problem 1-50'
+title: '题解：Project Euler Problem 1-50'
 date: 2021-04-16
 permalink: /posts/2021/04/project_euler_1_to_50/
 tags:
@@ -11,8 +11,8 @@ tags:
 *  目录
 {:toc}
 
+## 1. Multiples of 3 and 5
 ```python
-# 1. Multiples of 3 and 5
 # 改进：筛法打表，线性筛，欧式筛，大大减少时间复杂度
 
 ans = []
@@ -22,17 +22,12 @@ for i in range(1, n):
         ans.append(i)
 sum(ans)
 ```
+```
+233168
+```
 
-
-
-
-    233168
-
-
-
-
+## 2. Even Fibonacci numbers
 ```python
-# 2. Even Fibonacci numbers
 # 算法方面可能有改进，但我懒得去想了
 
 upper = 4000000
@@ -50,16 +45,12 @@ while third <= upper:
 cnt
 ```
 
+```
+4613732
+```
 
-
-
-    4613732
-
-
-
-
+## 3. Largest prime factor
 ```python
-# 3. Largest prime factor
 # 相关算法：各种大数分解算法
 
 def takeFirst(elem):
@@ -74,12 +65,12 @@ for i in tmp:
         break
 ```
 
-    6857
+```
+6857
+```
 
-
-
+## 4. Largest palindrome product
 ```python
-# 4. Largest palindrome product
 # 参考：https://leetcode-cn.com/problems/largest-palindrome-product/solution/die-dai-shu-xue-fa-by-tooooo_the_moon-5ynx/
 # 利用回文数分两半，sqrt(a^2 - 4*lower) 为整数这个条件来找 a
 
@@ -99,12 +90,12 @@ while a < 10^n:
     a += 1
 ```
 
-    906609
+```
+906609
+```
 
-
-
+## 5. Smallest multiple
 ```python
-# 5. Smallest multiple
 # 最小公倍数，参考：https://doc.sagemath.org/html/en/reference/rings_standard/sage/arith/functions.html
 # 求 LCM 相关算法：GCD 法
 
@@ -113,16 +104,12 @@ from sage.arith.functions import LCM_list
 LCM_list(list(range(1, 21)))
 ```
 
+```
+232792560
+```
 
-
-
-    232792560
-
-
-
-
+## 6. Sum square difference
 ```python
-# 6. Sum square difference
 # 平方和公式
 
 n = 100
@@ -132,16 +119,12 @@ diff = square_of_sum - sum_of_squares
 diff
 ```
 
+```
+25164150
+```
 
-
-
-    25164150
-
-
-
-
+## 7. 10001st prime
 ```python
-# 7. 10001st prime
 # 思路一：参考：https://en.wikipedia.org/wiki/Prime_number_theorem，素数定理给出了第 i 个素数的上下界
 # 然而我知道上下界也没什么用啊，上下界之间有好多个，project euler 是有验证码的，总不能一个个尝试吧
 # 翻了一下 SageMath 的文档，有个 prime_pi 可以算出小于某个数的素数个数。那直接看还少多少个，再 next_prime 不就行了
@@ -178,16 +161,12 @@ P = Primes()
 P.unrank(10000)
 ```
 
+```
+mpz(104743)
+```
 
-
-
-    mpz(104743)
-
-
-
-
+## 8. Largest product in a series
 ```python
-# 8. Largest product in a series
 # 遍历一遍就完事了，怎么改进懒得想了
 
 from functools import reduce
@@ -206,16 +185,12 @@ for i in range(len(givenstr)-12):
 max(ans)
 ```
 
+```
+23514624000
+```
 
-
-
-    23514624000
-
-
-
-
+## 9. Special Pythagorean triplet
 ```python
-# 9. Special Pythagorean triplet
 # 首先画出图像，显然是有解的，但不知道有没有整数解
 # 尝试 Sage 自带的，貌似非齐次的并不能解，NotImplementedError: No solver has been written for inhomogeneous_general_quadratic.
 # 尝试 sympy，得到解析解；观察发现，a、b 都是用 c 表示，而 a、b 根号里的内容一样；因此代入数值，只要其中一个没有虚部，那另一个必然也是正整数
@@ -268,15 +243,15 @@ for i in range(1, 1001):
 
 ```
 
-    a = 200
-    b = 375
-    c = 425
-    abc = 31875000
+```
+a = 200
+b = 375
+c = 425
+abc = 31875000
+```
 
-
-
+## 10. Summation of primes
 ```python
-# 10. Summation of primes
 # 我比较懒，two million 并不大，直接 next_prime 跑一分钟就完事了
 # 正规的做法貌似是筛法，不知道有没有比筛法更好的
 
@@ -301,13 +276,13 @@ print ("Time used: {} s.".format(end_time - start_time))
 print (ans)
 ```
 
-    Time used: 84.27182841300964 s.
-    142913828922
+```
+Time used: 84.27182841300964 s.
+142913828922
+```
 
-
-
+## 11. Largest product in a grid
 ```python
-# 11. Largest product in a grid
 # 对矩阵的操作，不管哪个方向，坐标改一改就行了，然后 for 循环，做法都一样
 # 看到矩阵，第一反应当然是 numpy
 # 懒得写了，直接用的这个人的代码：https://stackoverflow.com/users/13873980/joe-ferndz
@@ -338,12 +313,12 @@ ans = max([mr,mc,mx,my])
 print (ans)
 ```
 
-    70600674
+```
+70600674
+```
 
-
-
+## 12. Highly divisible triangular number
 ```python
-# 12. Highly divisible triangular number
 # 查了一下 SageMath 文档，果然有求 divisors 数量的，应该是用了乘性函数的性质来算的
 # https://doc.sagemath.org/html/en/constructions/number_theory.html
 # 试了几个，大致确定了范围，然后二分法？不对！二分法不行，因为因子数量并不是数字越大就越多的！
@@ -360,17 +335,14 @@ for i in tqdm(range(1, 1000000)):
         break
 ```
 
-      1%|          | 12374/999999 [00:00<00:08, 120986.81it/s]
-
-    76576500
-
-
+```
+1%|          | 12374/999999 [00:00<00:08, 120986.81it/s]
     
+76576500
+```
 
-
-
+## 13. Large sum
 ```python
-# 13. Large sum
 # 应该是想让你写一个高精度大数加法，不过 python 自带任意精度，直接加就完事了
 
 f = open(r"C:/Users/13672/Desktop/Project Euler/1 - 50/Large sum.txt", "r")
@@ -381,16 +353,12 @@ for i in range(100):
 str(res)[:10]
 ```
 
+```
+'5537376230'
+```
 
-
-
-    '5537376230'
-
-
-
-
+## 14. Longest Collatz sequence
 ```python
-# 14. Longest Collatz sequence
 # 没什么巧妙的解法，穷举就行；如何加速代码？可以把之前走过的路放 cache 里，之后用到就可以直接用
 # 代码懒得写，直接用的 https://codereview.stackexchange.com/questions/122273/longest-collatz-sequence-in-python
 # 用了 python 的装饰器
@@ -416,12 +384,12 @@ def collatz(n):
 print (max(range(1, 10**6), key=collatz))
 ```
 
-    837799
+```
+837799
+```
 
-
-
+## 15. Lattice paths
 ```python
-# 15. Lattice paths
 # 小学低年级时印象很深的奥赛题，这应该是我最早接触到递归思想？
 
 dimension = 20
@@ -439,28 +407,24 @@ for i in range(1, dimension):
 print (M[dimension-1, dimension-1])
 ```
 
-    137846528820
+```
+137846528820
+```
 
-
-
+## 16. Power digit sum
 ```python
-# 16. Power digit sum
 # 可能是想模 10 、100、1000 得到每一位，考察快速幂？
 # 但 SageMath 不用这么麻烦，随便求的
 
 sum([int(i) for i in str(2^1000)])
 ```
 
+```
+1366
+```
 
-
-
-    1366
-
-
-
-
+## 17. Number letter counts
 ```python
-# 17. Number letter counts
 # 很没意思的题目，数就完事了
 # 可以直接用 num2words
 
@@ -472,16 +436,12 @@ for i in range(1,1001):
 res
 ```
 
+```
+21124
+```
 
-
-
-    21124
-
-
-
-
+## 18. Maximum path sum I
 ```python
-# 18. Maximum path sum I
 # 动态规划，递归就完事了
 # 更简单的思路：bottom up，选最大的往上加
 
@@ -494,16 +454,12 @@ for i in range(len(tri)-1, 0, -1):
 tri[0][0]
 ```
 
+```
+1074
+```
 
-
-
-    1074
-
-
-
-
+## 19. Counting Sundays
 ```python
-# 19. Counting Sundays
 # 初等数论书里有过一个万年历的算法，不过这道题显然简单得多，用不上那个方法
 # 查万年历知，1901.01.01 是周二
 
@@ -523,16 +479,12 @@ for year in range(1901, 2001):
 cnt
 ```
 
+```
+171
+```
 
-
-
-    171
-
-
-
-
+## 20. Factorial digit sum
 ```python
-# 20. Factorial digit sum
 # SageMath 可以直接求
 # 我想这个问题主要考察的应该是空间，时间复杂度并不高，100 次乘法，但阶乘后数字很大，如果是用 C 等语言，会超出精度
 # 所以高精度乘法怎么做的，这题就应该怎么做
@@ -582,16 +534,12 @@ cnt
 sum([int(i) for i in str(factorial(100))])
 ```
 
+```
+648
+```
 
-
-
-    648
-
-
-
-
+## 21. Amicable numbers
 ```python
-# 21. Amicable numbers
 # 因子和函数是乘性函数，可以打表来做
 # 如何优化？参考：https://stackoverflow.com/questions/38094818/what-is-the-most-efficient-way-to-find-amicable-numbers-in-python
 # SageMath 比较方便，因子和可以直接算，注意，不算本身！
@@ -610,19 +558,14 @@ for i in tqdm(range(1, 10000)):
 cnt
 ```
 
-    100%|██████████| 9999/9999 [00:00<00:00, 116493.56it/s]
+```
+100%|██████████| 9999/9999 [00:00<00:00, 116493.56it/s]
 
+31626
+```
 
-
-
-
-    31626
-
-
-
-
+## 22. Names scores
 ```python
-# 22. Names scores
 # 直接算即可
 
 f = open(r"C:\Users\13672\Desktop\Project Euler\1 - 50\Names scores.txt", "r")
@@ -631,16 +574,12 @@ t.sort()
 sum(sum(ord(j)-64 for j in t[i]) * (i+1) for i in range(len(t)))
 ```
 
+```
+871198282
+```
 
-
-
-    871198282
-
-
-
-
+## 23. Non-abundant sums
 ```python
-# 23. Non-abundant sums
 # 思路一：找出所有 abundant，然后找出所有它们可以表示的数，用总和减掉这些数的和；一开始跑了 14 秒，加了那个 break 之后变成了 9 秒
 # 思路二：不到 1 秒！用了 not in，大大减少开销；参考 https://stackoverflow.com/questions/42499002/project-euler-23-python
 
@@ -713,16 +652,12 @@ result += str(number[0])
 result
 ```
 
+```
+'2783915460'
+```
 
-
-
-    '2783915460'
-
-
-
-
+## 25. 1000-digit Fibonacci number
 ```python
-# 25. 1000-digit Fibonacci number
 # 思路一：可以根据 Fibonacci 的通项公式得到一个大概的 digits 的公式，然后求一下反函数；参考：https://codereview.stackexchange.com/questions/224518/project-euler-25-the-1000-digit-fibonacci-index
 # 注意，SageMath 的 log 默认以 e 为底
 # 思路二：既然已经知道通项公式，那么二分查找即可
@@ -759,12 +694,12 @@ while tmp >= 1000:
 print (mid+1)
 ```
 
-    4782
+```
+4782
+```
 
-
-
+## 26. Reciprocal cycles
 ```python
-# 26. Reciprocal cycles
 # Full Reptend Prime，参考：https://mathworld.wolfram.com/FullReptendPrime.html
 
 def f(N):
@@ -781,13 +716,13 @@ d = f(N)
 print ("The longest repeating decimal for d < %d is 1/%d with %d repeating digits" % (N, d, (1 if N<8 else d-1)))
 ```
 
-    The longest recurring cycle for 1/d where d < 1000
-    The longest repeating decimal for d < 1000 is 1/983 with 982 repeating digits
+```
+The longest recurring cycle for 1/d where d < 1000
+The longest repeating decimal for d < 1000 is 1/983 with 982 repeating digits
+```
 
-
-
+## 27. Quadratic primes
 ```python
-# 27. Quadratic primes
 # 问题的背景和素数公式、乌岚螺旋、黑格纳数有关，可以自行搜索相关资料，但本题的解法和它们并没有什么关系
 # 解题思路：n=0，所以 b 必须是素数；b 基本不可能是 2，b 是奇数，那么 n=1 有 a 是奇数；而 a 是素数时，明显比 a 是合数时生成的序列长；
 # 这三点可以大大减少穷举时间
@@ -810,19 +745,14 @@ for b in tqdm(tmp):
 ans[1]
 ```
 
-    100%|██████████| 336/336 [00:00<00:00, 1724.72it/s]
+```
+100%|██████████| 336/336 [00:00<00:00, 1724.72it/s]
 
+-59231
+```
 
-
-
-
-    -59231
-
-
-
-
+## 28. Number spiral diagonals
 ```python
-# 28. Number spiral diagonals
 # 问题的背景是乌岚螺旋，就是他听讲座时闲着无聊画出来的东西...
 # 不过这题和背景知识没什么关系，找规律直接算就行
 
@@ -842,16 +772,12 @@ while dimension < upper:
 ans
 ```
 
+```
+669171001
+```
 
-
-
-    669171001
-
-
-
-
+## 29. Distinct powers
 ```python
-# 29. Distinct powers
 # 数字不大，直接穷举就行
 # 怎么改进？可以只算素数的某某次方，然后用这些去表示那些合数的
 
@@ -863,16 +789,12 @@ for a in range(2, 101):
 len(list(set(ans)))
 ```
 
+```
+9183
+```
 
-
-
-    9183
-
-
-
-
+## 30. Digit fifth powers
 ```python
-# 30. Digit fifth powers
 # 问题背景是初中 oi 里的水仙花数，不一样的是这里并没有限制数字位数
 # 显然，999999 > 6*9^5，因此最多五位，那么循环次数不多，穷举就好了，没什么好的改进，改进的话可以缩小穷举范围
 # 如果用 i.digits() 会莫名其妙报错 AttributeError: 'int' object has no attribute 'digits'
@@ -880,16 +802,12 @@ len(list(set(ans)))
 sum(i for i in range(2, 1000000) if i == sum(int(d)^5 for d in str(i)))
 ```
 
+```
+443839
+```
 
-
-
-    443839
-
-
-
-
+## 31. Coin sums
 ```python
-# 31. Coin sums
 # 典型的动态规划
 # 懒得写了，直接用答案给的代码
 # 这个代码比起一般的做法，因为是按币种数来递归，因此减少了递归深度
@@ -924,13 +842,13 @@ print("Result found in %f seconds - depth:%d" % (elapsed, glob_depth))
 
 ```
 
-    73682
-    Result found in 0.004504 seconds - depth:8
+```
+73682
+Result found in 0.004504 seconds - depth:8
+```
 
-
-
+## 32. Pandigital products
 ```python
-# 32. Pandigital products
 # 思路：总共 9 位十进制数，三个部分应该怎么分？显然，a 和 b 位数加起来应该和 c 差不多，那么 a 和 b 加起来不超过五位
 # 而为了避免重复，我们可以假设 a < b，那么 a 最多两位，b最多四位，大大缩小穷举范围
 # 注意，重复的不能算两次！
@@ -948,19 +866,14 @@ for a in tqdm(range(1, 100)):
 sum(list(set(ans)))
 ```
 
-    100%|██████████| 99/99 [00:00<00:00, 900.36it/s]
+```
+100%|██████████| 99/99 [00:00<00:00, 900.36it/s]
 
+45228
+```
 
-
-
-
-    45228
-
-
-
-
+## 33. Digit cancelling fractions
 ```python
-# 33. Digit cancelling fractions
 # 参考：https://mathworld.wolfram.com/AnomalousCancellation.html
 # 可以理解成：\frac{xb+y}{yb+z} = \frac{x}{z}，b = 10，x < y
 # 简单推导可得 y(10x-z) = 9xz；由于 y 最后会被消去，所以并不重要，x/z 是不同的形式就不是重复解
@@ -980,16 +893,12 @@ for z in range(1, 10):
 ans.denominator
 ```
 
+```
+100
+```
 
-
-
-    100
-
-
-
-
+## 34. Digit factorials
 ```python
-# 34. Digit factorials
 # 和之前那题类似，首先确定范围，7*factorial(9) = 2540160，所以最多 6 位
 # 还可以更进一步缩小范围，比如 6 位不可能含有 9
 
@@ -1008,19 +917,14 @@ for i in tqdm(range(3, 999999)):
 sum(ans)
 ```
 
-    100%|██████████| 999996/999996 [00:02<00:00, 339264.85it/s]
+```
+100%|██████████| 999996/999996 [00:02<00:00, 339264.85it/s]
 
+40730
+```
 
-
-
-
-    40730
-
-
-
-
+## 35. Circular primes
 ```python
-# 35. Circular primes
 # 显然，应当从筛法得到的素数中，再去掉任何一位出现偶数或 5 的素数
 
 from tqdm import tqdm
@@ -1056,19 +960,14 @@ for i in tqdm(tmp):
 cnt
 ```
 
-    100%|██████████| 78498/78498 [00:00<00:00, 247413.65it/s]
+```
+100%|██████████| 78498/78498 [00:00<00:00, 247413.65it/s]
 
+55
+```
 
-
-
-
-    55
-
-
-
-
+## 36. Double-base palindromes
 ```python
-# 36. Double-base palindromes
 # 穷举就完事了
 
 from tqdm import tqdm
@@ -1091,19 +990,14 @@ for i in tqdm(range(1000000)):
 cnt
 ```
 
-    100%|██████████| 1000000/1000000 [00:00<00:00, 1153083.09it/s]
+```
+100%|██████████| 1000000/1000000 [00:00<00:00, 1153083.09it/s]
 
+872187
+```
 
-
-
-
-    872187
-
-
-
-
+## 37. Truncatable primes
 ```python
-# 37. Truncatable primes
 # 一开始想的是能否左右分别生成取交集，因为都是素数限制了某些位的位数只能取特定的数；
 # 这种方法确实有一定效果，得到了十个解，但最大的那个数恰好逃出了我的限制，我也发现我这种做法有漏洞
 # 没办法，只能穷举了，穷举也确实很快得到了结果
@@ -1131,19 +1025,14 @@ assert len(ans) == 11
 sum(ans)
 ```
 
-    100%|██████████| 78498/78498 [00:00<00:00, 109918.02it/s]
+```
+100%|██████████| 78498/78498 [00:00<00:00, 109918.02it/s]
 
+748317
+```
 
-
-
-
-    748317
-
-
-
-
+## 38. Pandigital multiples
 ```python
-# 38. Pandigital multiples
 # 显然要让数字最大，原来的数字必然 9 开头，如果答案不是 9，那么乘上的东西必然最多是 4
 # 而原来的数字必然不超过 4 位，否则 n = 2 都会越界，所以只需要爆破后三位
 # 而且后三位必然不相同，不过爆破的数字已经足够小了，这个限制没什么必要
@@ -1164,16 +1053,12 @@ for i in range(999):
 max(ans)
 ```
 
+```
+932718654
+```
 
-
-
-    932718654
-
-
-
-
+## 39. Integer right triangles
 ```python
-# 39. Integer right triangles
 # 问题背景是毕达哥拉斯三角形
 # 思路是由于 a+b+c = p，a^2+b^2 = c^2，于是有 b = \frac{p^2-2ap}{2p-2a}
 # 而 a+b > c，于是可知 a < p/2
@@ -1195,16 +1080,12 @@ for p in range(upper, 2, -2):
 ans[0]
 ```
 
+```
+840
+```
 
-
-
-    840
-
-
-
-
+## 40. Champernowne's constant
 ```python
-# 40. Champernowne's constant
 # 问题背景是钱伯瑙恩数，是一个超越数，可以表示为无穷级数
 # 不过这里用不上无穷级数，只要利用钱伯瑙恩数的特殊性质即可
 
@@ -1224,16 +1105,12 @@ for i in range(6):
 ans
 ```
 
+```
+210
+```
 
-
-
-    210
-
-
-
-
+## 41. Pandigital prime
 ```python
-# 41. Pandigital prime
 # 利用 itertools 的 permutations 即可
 
 from itertools import permutations
@@ -1253,21 +1130,17 @@ except success:
     print (s)
 ```
 
-    362880it [00:02, 162431.39it/s]
-    40320it [00:00, 188237.58it/s]
-    13it [00:00, 74898.29it/s]
-
-    7652413
-
-
+```
+362880it [00:02, 162431.39it/s]
+40320it [00:00, 188237.58it/s]
+13it [00:00, 74898.29it/s]
     
+7652413
+```
 
-
-
+## 42. Coded triangle numbers
 ```python
-# 42. Coded triangle numbers
 # 按要求算就行
-
 f = open(r"C:\Users\13672\Desktop\Project Euler\1 - 50\Coded triangle numbers.txt", "r")
 tmp = f.read().strip("\"").split("\",\"")
 
@@ -1289,16 +1162,12 @@ for i in tmp:
 cnt
 ```
 
+```
+162
+```
 
-
-
-    162
-
-
-
-
+## 43. Sub-string divisibility
 ```python
-# 43. Sub-string divisibility
 # 思路一：不需要写太多代码，直接根据整除的性质确定每一位的数，参考：http://mijkenator.github.io/2016/03/15/project-euler-problem-43/
 # 思路二：穷举，其实可以先确定后面几位，再穷举前面的
 
@@ -1322,19 +1191,14 @@ for i in tqdm(p):
 solution
 ```
 
-    3628800it [00:07, 460616.03it/s]
+```
+3628800it [00:07, 460616.03it/s]
 
+16695334890
+```
 
-
-
-
-    16695334890
-
-
-
-
+## 44. Pentagon numbers
 ```python
-# 44. Pentagon numbers
 # 思路一：解一元二次方程可判断是否为五边形数，生成一定范围内所有这种数，再加减得到的结果穷举判断，非常慢
 # 思路二：大约要跑十秒，参考：https://codereview.stackexchange.com/questions/93232/speedup-for-project-euler-44-pentagon-numbers
 # 思路三：两个五边形数之间的差是 3n+1，利用这一点，我们可以避免乘法的情况下，用生成器生成五边形数列；一共四个数，b、d、b+d、b+2d，判断是否在生成的数列里即可
@@ -1370,19 +1234,14 @@ print ("Used {}s.".format(end-start))
 next(it)[2]
 ```
 
-    Used 0.0005259513854980469s.
+```
+Used 0.0005259513854980469s.
 
+5482660
+```
 
-
-
-
-    5482660
-
-
-
-
+## 45. Triangular, pentagonal, and hexagonal
 ```python
-# 45. Triangular, pentagonal, and hexagonal
 # 和上一道题一样的做法，用生成器
 
 def polygonal(s):
@@ -1414,16 +1273,12 @@ it = search(2)
 next(it)
 ```
 
+```
+1533776805
+```
 
-
-
-    1533776805
-
-
-
-
+## 46. Goldbach's other conjecture
 ```python
-# 46. Goldbach's other conjecture
 # 穷举即可
 
 upper = 10000
@@ -1447,16 +1302,12 @@ while start <= upper:
 start
 ```
 
+```
+5777
+```
 
-
-
-    5777
-
-
-
-
+## 47. Distinct primes factors
 ```python
-# 47. Distinct primes factors
 # SageMath 自带 prime_factors()，所以只要自己实现一个连续四个数的函数即可
 # 参考：https://doc.sagemath.org/html/en/reference/rings_standard/sage/arith/misc.html
 # 一开始自己写的代码有点丑陋，之后参考这篇文章修改了代码：http://louistiao.me/posts/project-euler/problem-47-distinct-primes-factors/
@@ -1483,12 +1334,12 @@ for i in nwise(map(prime_factors, count(2)), n):
         break
 ```
 
-    134043
+```
+134043
+```
 
-
-
+## 48. Self powers
 ```python
-# 48. Self powers
 # 经典快速幂，python 从 3.x 开始，pow 就是快速幂，所以不需要我们自己实现了
 
 mod = 10^10
@@ -1500,18 +1351,13 @@ for i in range(1, 1001):
 ans
 ```
 
+```
+9110846700
+```
 
-
-
-    9110846700
-
-
-
-
+## 49. Prime permutations
 ```python
-# 49. Prime permutations
 # 穷举
-
 from itertools import permutations, tee, combinations
 from collections import defaultdict
 from tqdm import tqdm
@@ -1546,12 +1392,12 @@ except success:
     print (ans)
 ```
 
-    296962999629
+```
+296962999629
+```
 
-
-
+## 50. Consecutive prime sum
 ```python
-# 50. Consecutive prime sum
 # 穷举就完事了
 
 from tqdm import tqdm
@@ -1582,13 +1428,12 @@ for i in tqdm(range(length)):
 max_num
 ```
 
-    100%|██████████| 547/547 [00:00<00:00, 397485.15it/s]
+```
+100%|██████████| 547/547 [00:00<00:00, 397485.15it/s]
 
+997651
+```
 
-
-
-
-    997651
 
 
 ***
