@@ -396,7 +396,11 @@ $$
 
 * 输入： $(x_1^{(0)}, x_2^{(0)}, ...,x_n^{(0)}, y_0), (x_1^{(1)}, x_2^{(1)}, ...,x_n^{(1)},y_1), ..., (x_1^{(m)}, x_2^{(m)}, ..., x_n^{(m)}, y_m)$
 
-* 输出： $C_{result}  = \underbrace{argmax}_{C_k} P(Y=C_k) \prod_{j=1}^{n} P(X_j=X_j^{(test)} \mid Y=C_k)$
+* 输出： 
+
+  $$
+  C_{result} = \underbrace{argmax}_{C_k}{P(Y=C_k) \cdot  \prod_{j=1}^{n}{P(X_j=X_j^{(test)}} \mid {Y=C_k})}
+  $$
 
 * 要算什么： 首先用极大似然估计算先验概率，然后用贝叶斯公式算后验概率
 
