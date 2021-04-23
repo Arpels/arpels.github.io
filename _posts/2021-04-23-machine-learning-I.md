@@ -502,7 +502,7 @@ $$
 
     * $p=1$：称为曼哈顿距离，$L_1(x_i,x_j)=\sum_{l=1}^n{\lvert x_i^{(l)}-x_j^{(l)} \rvert}$；
     
-    * $p=2$：称为欧式距离，$L_2(x_i,x_j)=(\sum_{l=1}^n{{\lvert x_i^{(l)}-x_j^{(l)} \rvert}^2})^{\frac{1}{2}}$；
+    * $p=2$：称为欧式距离，$L_2(x_i,x_j)=(\sum_{l=1}^n{\lvert x_i^{(l)}-x_j^{(l)} \rvert^2})^{\frac{1}{2}}$；
     
     * $p= \infty$：为各维度距离中最大值，$L_p(x_i, x_j) = max \lvert x_i^{(l)} - x_j^{(l)} \rvert$。
 
